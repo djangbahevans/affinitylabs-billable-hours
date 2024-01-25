@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #eee;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        th {
+            background-color: #545ca4;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    {% for company, data in company_data.items() %}
+    <h2>Company: {{ company }}</h2>
+    <table>
+        <tr>
+            <th>Employee ID</th>
+            <th>Number of Hours</th>
+            <th>Unit Price</th>
+            <th>Cost</th>
+        </tr>
+        {% for employee_id, details in data['employees'].items() %}
+        <tr>
+            <td>{{ employee_id }}</td>
+            <td>{{ details['hours'] }}</td>
+            <td>{{ details['cost'] / details['hours'] }}</td>
+            <td>{{ details['cost'] }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td>{{ data['total_cost'] }}</td>
+        </tr>
+    </table>
+    {% endfor %}
+</body>
+
+</html>

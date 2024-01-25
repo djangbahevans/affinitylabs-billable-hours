@@ -1,0 +1,1 @@
+from app.routes.invoice.invoice_generator import get_invoice_generator
