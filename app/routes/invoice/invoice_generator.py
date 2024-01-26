@@ -6,6 +6,10 @@ from app.models.timetable import Timetable
 
 
 class InvoiceGenerator(ABC):
+    @abstractmethod
+    def file_type() -> str:
+        raise NotImplementedError
+
     @staticmethod
     def calculate_cost(timetable: List[Timetable]) -> Dict:
         company_data = {}
@@ -48,6 +52,10 @@ class InvoiceGenerator(ABC):
 
 class CsvInvoiceGenerator(InvoiceGenerator):
     @staticmethod
+    def file_type() -> str:
+        return "CSV"
+
+    @staticmethod
     def parse_content(content: str) -> List[Dict]:
         reader = csv.DictReader(content.splitlines())
         return list(reader)
@@ -58,4 +66,4 @@ class CsvInvoiceGenerator(InvoiceGenerator):
 
 
 def get_invoice_generator() -> type[InvoiceGenerator]:
-        return CsvInvoiceGenerator
+    return CsvInvoiceGenerator

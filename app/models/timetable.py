@@ -1,6 +1,7 @@
 import datetime
 
-from pydantic import AliasChoices, BaseModel, Field, ValidationInfo, field_validator
+from pydantic import (AliasChoices, BaseModel, Field, ValidationInfo,
+                      field_validator)
 
 
 class Timetable(BaseModel):

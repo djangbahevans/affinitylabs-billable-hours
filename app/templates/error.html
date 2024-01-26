@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice Generator</title>
+    <title>Error</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -41,9 +41,8 @@
 </head>
 
 <body>
-    <h1>Invoice Generator</h1>
-    <p>This is a web application that generates invoices based on a timesheet. Please ensure that your file follows
-        the required structure:</p>
+    <h1>Error</h1>
+    <p>An error occurred while processing your request. Please make sure your file follows the required structure:</p>
     <ul>
         <li>Employee ID</li>
         <li>Billable Rate (per hour)</li>
@@ -52,11 +51,7 @@
         <li>Start Time</li>
         <li>End Time</li>
     </ul>
-    <form method="POST" action="/generate-invoice" enctype="multipart/form-data">
-        <label for="file">Upload CSV Timesheet:</label>
-        <input type="file" name="file" accept=".csv" required>
-        <button type="submit">Generate Invoices</button>
-    </form>
+    <p>Error Message: {{ error_message }}</p>
 </body>
 
 </html>
