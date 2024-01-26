@@ -82,10 +82,6 @@ To run the tests, use the following command:
 pytest
 ```
 
-## License
-
-This project is licensed under the terms of the [MIT license](/LICENSE).
-
 ## Contact
 
 If you want to contact me you can reach me at <a href="mailto:djangbahevans@yahoo.com">djangbahevans@yahoo.com</a>.

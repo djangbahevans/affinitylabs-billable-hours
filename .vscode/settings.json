@@ -13,5 +13,6 @@
         "no-inline-html": {
             "allowed_elements": ["a"]
         }
-    }
+    },
+    "python.analysis.autoImportCompletions": true
 }
