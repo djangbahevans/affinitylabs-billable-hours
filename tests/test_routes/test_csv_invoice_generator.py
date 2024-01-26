@@ -1,6 +1,8 @@
 import datetime
-from pydantic import ValidationError
+
 import pytest
+from pydantic import ValidationError
+
 from app.models import Timetable
 from app.routes.invoice.invoice_generator import CsvInvoiceGenerator
 

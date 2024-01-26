@@ -1,5 +1,7 @@
 import datetime
+
 import pytest
+
 from app.models.timetable import Timetable
 from app.routes.invoice.invoice_generator import InvoiceGenerator
 

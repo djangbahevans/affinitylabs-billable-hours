@@ -1,8 +1,5 @@
-import pytest
-from fastapi import HTTPException, status
+from fastapi import status
 from fastapi.testclient import TestClient
-from app.models import Timetable
-from app.routes.invoice.invoice_generator import InvoiceGenerator, get_invoice_generator
 
 from app.main import app
 
